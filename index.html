@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Semestre 2026-I</title>
+  <style>
+    :root {
+      --page-max: 1000px;
+      --text: #111;
+      --muted: #666;
+      --border: #ddd;
+      --accent: #0a0a0a;
+      --bg: #ffffff;
+    }
+    html, body {
+      margin: 0; padding: 0; background: var(--bg); color: var(--text);
+      font-family: "Times New Roman", Times, Georgia, serif; line-height: 1.4;
+    }
+    .page {
+      max-width: var(--page-max); margin: 40px auto; padding: 0 24px;
+    }
+    header {
+      text-align: center; margin-bottom: 24px;
+    }
+    h1 {
+      font-weight: 700; font-size: 32px; margin: 0 0 4px;
+      letter-spacing: 0.2px; color: var(--accent);
+    }
+    .subtitle { color: var(--muted); font-size: 14px; }
+
+    table {
+      width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 24px;
+      border: 1px solid var(--border);
+    }
+    thead th {
+      border-bottom: 2px solid var(--border);
+      padding: 10px 12px; text-align: left; font-size: 15px;
+    }
+    tbody td { border-top: 1px solid var(--border); padding: 10px 12px; vertical-align: top; }
+    tbody tr.section > td { background: #f7f7f7; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2px; }
+    .topic { white-space: pre-wrap; }
+    .date, .link { color: var(--text); }
+    .dot { color: var(--muted); }
+
+    /* For narrow screens, allow the Tema column to grow */
+    colgroup col:nth-child(1) { width: 55%; }
+    colgroup col:nth-child(2) { width: 25%; }
+    colgroup col:nth-child(3) { width: 20%; }
+
+    @media (max-width: 720px) {
+      thead { display: none; }
+      table, tbody, tr, td { display: block; width: 100%; }
+      tbody tr { border-top: 1px solid var(--border); }
+      tbody td { border: 0; padding: 8px 0; }
+      tbody td::before {
+        content: attr(data-label) ": ";
+        font-weight: 700; color: var(--muted);
+      }
+      tbody tr.section > td::before { content: none; }
+      colgroup { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Semestre 2026-I</h1>
+      <div class="subtitle">Programa temático y cronograma</div>
+    </header>
+
+    <table aria-label="Temario y cronograma">
+      <colgroup>
+        <col />
+        <col />
+        <col />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Tema o subtema</th>
+          <th>Fecha</th>
+          <th>Enlace</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="topic" data-label="Tema o subtema">Introducción</td>
+          <td class="date" data-label="Fecha">viernes 15 de agosto</td>
+          <td class="link" data-label="Enlace"></td>
+        </tr>
+
+        <tr class="section">
+          <td class="topic" data-label="Tema o subtema" colspan="3">CONTEXTO PARA LA LEY DE GAUSS</td>
+        </tr>
+        <tr><td class="topic" data-label="Tema o subtema">Trabajo con vectores<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Suma vectorial RA</td><td class="date" data-label="Fecha">Lunes 18 de agosto</td><td class="link" data-label="Enlace"><a href="/suma-vectorial/index.html">click</a> </td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Principio de superposición<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Producto Escalar y Vectorial<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Paralelismos entre mecánica y electricidad<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Leyes de Newton<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Ley de Coulomb</td><td class="date" data-label="Fecha">lunes 18 de agosto (yo)</td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Materiales eléctricos<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Conductores y aislantes (dieléctricos)<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">LA LEY DE GAUSS<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">El campo eléctrico<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">El campo de las distribuciones de carga discretas y continuas</td><td class="date" data-label="Fecha">lunes 25 de agosto</td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Vectores de área y diferenciales de área<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">El flujo<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">El flujo del campo eléctrico<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Superficies cerradas<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Flujo neto<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">La ley de Gauss<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Aplicaciones de la ley de Gauss</td><td class="date" data-label="Fecha">miércoles 27 (propedéutico hasta la una) y viernes 29 de agosto (yo)</td><td class="link" data-label="Enlace"></td></tr>
+
+        <tr class="section">
+          <td class="topic" data-label="Tema o subtema" colspan="3">CONTEXTO PARA LA LEY DE AMPÈRE</td>
+        </tr>
+        <tr><td class="topic" data-label="Tema o subtema">Corriente (i)<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Experimento de Oersted con RA</td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Campo magnético (B)<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">¿Campo magnético de un imán o de cargas en movimiento? Orígenes del campo magnético en los materiales</td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Materiales magnéticos</td><td class="date" data-label="Fecha">EL 10 DE SEPTIEMBRE</td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Líneas de B</td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">La ley de Biot-Savart con RA</td><td class="date" data-label="Fecha">YO. EL 1 DE SEPTIEMBRE</td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Enunciado de la ley de Ampère<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Aplicaciones de la ley de Ampère<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Alambre recto en RA<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Solenoide en RA 1 y 2<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Toroide en RA 1 y 2</td><td class="date" data-label="Fecha">YO. EL 3 O EL 5 O EL 8 DE SEPTIEMBRE. Miércoles o viernes (3 o 5). Seminario a distancia sobre proyectos finales en RA</td><td class="link" data-label="Enlace"></td></tr>
+
+        <tr class="section">
+          <td class="topic" data-label="Tema o subtema" colspan="3">PRIMER EXAMEN PARCIAL</td>
+        </tr>
+        <tr><td class="topic" data-label="Tema o subtema">&nbsp;</td><td class="date" data-label="Fecha">VIERNES 19 DE SEPTIEMBRE</td><td class="link" data-label="Enlace"></td></tr>
+
+        <tr class="section">
+          <td class="topic" data-label="Tema o subtema" colspan="3">LA LEY DE GAUSS PARA EL MAGNETISMO</td>
+        </tr>
+        <tr><td class="topic" data-label="Tema o subtema">El flujo del campo magnético<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Polos magnéticos en RA 1-2-3<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">La ley de Gauss para el magnetismo en RA<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+
+        <tr class="section">
+          <td class="topic" data-label="Tema o subtema" colspan="3">CONTEXTO PARA EL ANÁLISIS DE CIRCUITOS</td>
+        </tr>
+        <tr><td class="topic" data-label="Tema o subtema">Trabajo y energías cinética y potencial<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">El potencial eléctrico (Voltaje)<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Cálculo del potencial a partir del campo<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Superficies equipotenciales<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">El potencial eléctrico de cargas puntuales y distribuciones contínuas de carga<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Cálculo del campo a partir del potencial<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Fems de corriente continua<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Potencia<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Resistencia eléctrica y materiales<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Resistencia y resistividad<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Ley de Ohm<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Resistores<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Conductores semiconductores y dieléctricos (aislantes)<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Superconductores<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Capacitancia<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Definición y cálculo de la capacitancia<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Almacenamiento de energía<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Capacitor con dieléctrico<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Los dieléctricos y la ley de Gauss<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+
+        <tr class="section">
+          <td class="topic" data-label="Tema o subtema" colspan="3">ANÁLISIS DE CIRCUITOS. PARTE 1: CORRIENTE CONTINUA</td>
+        </tr>
+        <tr><td class="topic" data-label="Tema o subtema">Conexiones<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">En Serie<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">En Paralelo<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Análisis de circuitos<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Las reglas de Kirchhoff<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Circuitos RC<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Circuitos de mallas múltiples de resistores (origami eléctrico)<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+
+        <tr class="section">
+          <td class="topic" data-label="Tema o subtema" colspan="3">CONTEXTO PARA LA LEY DE INDUCCIÓN DE FARADAY</td>
+        </tr>
+        <tr><td class="topic" data-label="Tema o subtema">Efectos del campo magnético sobre las cargas en movimiento<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Fuerza de Lorentz<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">La fuerza magnética sobre una corriente<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Momento de torsión sobre una espira de corriente<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+
+        <tr class="section">
+          <td class="topic" data-label="Tema o subtema" colspan="3">LA LEY DE INDUCCIÓN DE FARADAY * F1 F2</td>
+        </tr>
+        <tr><td class="topic" data-label="Tema o subtema">Los experimentos de Faraday<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Experimento 1: imán en movimiento RA<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Experimento 2: bobina en movimiento (fem cinética) RA<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Experimento 3: dos bobinas RA<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">La ley de Inducción de Faraday<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">La ley de Lenz<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">La ley de inducción de Faraday en términos de los campos eléctrico y magnético<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Generador eléctrico RA<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+
+        <tr class="section">
+          <td class="topic" data-label="Tema o subtema" colspan="3">ECUACIONES DE MAXWELL</td>
+        </tr>
+        <tr><td class="topic" data-label="Tema o subtema">La ley de Ampère con la generalización de Maxwell<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Ondas electromagnéticas RA<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+
+        <tr class="section">
+          <td class="topic" data-label="Tema o subtema" colspan="3">ANÁLISIS DE CIRCUITOS. PARTE 2: CORRIENTE ALTERNA</td>
+        </tr>
+        <tr><td class="topic" data-label="Tema o subtema">Fem y corriente alternas<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Inductancia<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Circuitos RLC<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Potencia promedio<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+        <tr><td class="topic" data-label="Tema o subtema">Transformador eléctrico RA nuevo<span class="dot"> .</span></td><td class="date" data-label="Fecha"></td><td class="link" data-label="Enlace"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
