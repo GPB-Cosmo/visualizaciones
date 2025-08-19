@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>    
+  <body>
+    
+    <a-scene>      
+          <a-assets >
+            <video id="video1" autoplay loop="false" src="PULSAR ‐ resortes.mp4"></video>
+            <a-asset-item id="estrellaCampo" src="estrella-campo.glb"></a-asset-item>
+          </a-assets>      
+      
+        <a-marker
+        type="pattern"
+        url="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt"
+      >
+        <a-video position="0 0 0" rotation="90 0 0" src="#video1" width="3.2" height="1.8"                   
+                   animation="property: visible ; to: false;loop:1; delay:62000;"
+                   animation__2="property: visible ; to: true;loop:1; delay:216000;"
+                   ></a-video>        
+
+          <a-entity rotation="0 0 25">        
+      <a-entity visible="false"                
+                gltf-model="#estrellaCampo"                
+                animation="property: visible;to:true;loop:1;delay:64000;"
+                animation__2="property:rotation; dur:1500; to: 0 -360 0; easing: linear; loop:true; delay:0;" 
+                animation__3="property:visible; to:false;loop:1; delay:191000;"                
+                ></a-entity>        
+    </a-entity>
+        
+        <a-entity  rotation="0 0 25">  
+        <a-entity visible="false" 
+                gltf-model="#estrellaCampo"                
+                animation__4="property: visible;to:true;loop:1;delay:191000;"
+                animation__5="property:rotation; dur:89; to: 0 -360 0; easing: linear; loop:true; delay:0;"
+                animation__6="property:visible; to:false;loop:1; delay:216000;"                
+                ></a-entity> 
+          </a-entity> 
+        
+        <!--
+        <a-entity rotation="0 90 90">                 
+                ROTACIÓN LENTA
+                animation__2="property:rotation; dur:15000; to: 0 -360 0; easing: linear; loop:10; delay:0;" 
+                <a-entity scale="0.5 0.5 0.5" position="0 0 0" visible="false" animation__4="property: visible;to:true;loop:1;delay:191000;"                
+                animation="property: rotation; dur: 80; to: 0 -360 0; easing: linear; loop: true; delay: 183000;"
+                animation__2="property: visible ; to: true;loop:1; delay:62000;"
+                animation__3="property: visible ; to: false;loop:1; delay:216000;"
+                gltf-model="url(https://cdn.glitch.me/f83eeeb4-dea3-4081-87aa-1224dd105c5c/estrella%20campo%20jets%20rellenos.glb?v=1743577809374)"                
+                ></a-entity>
+        </a-entity> -->
+        
+          
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
