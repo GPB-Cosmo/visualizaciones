@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link rel="icon" href="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/icono.png" type="image/png">    
+  </head>
+<body style="margin : 0px; overflow: hidden; font-family: Monospace;">
+	
+	<a-scene embedded arjs>
+  
+      
+<a-marker-camera preset="hiro">
+    <!--Superficie cerrada con forma de cilindro-->
+    <a-entity position="-1 0 0" rotation="0 45 0">
+    <a-cylinder color ="green" radius="0.6" height="1.5" position="-1.5 1 -0.25" opacity="" rotation="0 0 90">
+    </a-cylinder>   
+    
+    <!--vectores de área-->
+    <!--tapa derecha-->
+    <a-cylinder position="-0.5 1.25 -0.25" radius="0.015" height="0.5" color="#ff6f00" rotation="0 0 90"></a-cylinder>
+    <a-cone position="-0.25 1.25 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 -90"></a-cone>
+    <!--tapa izquierda-->
+    <a-cylinder position="-2.5 1.25 -0.25" radius="0.015" height="0.5" color="#ff6f00" rotation="0 0 90"></a-cylinder>
+    <a-cone position="-2.75 1.25 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 90"></a-cone>
+    <!--Pared cilíndrica-->
+    <!--
+    <a-cylinder position="-1.5 1.75 -0.25" radius="0.015" height="0.5" color="#ff6f00" rotation="0 0 "></a-cylinder>
+    <a-cone position="-1.5 2 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 "></a-cone>
+-->
+    <!-- vector de área vertical para la pared cilindrica
+    <a-cylinder position="-1.5 1 -0.25" radius="0.015" height="2" color="#ff6f00" rotation="0 0 "></a-cylinder>
+    <a-cone position="-1.5 2 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 "></a-cone>
+    <a-cone position="-1.5 0 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 180"></a-cone>-->
+    <!-- vector de área horizontal para la pared cilindrica-->
+    <a-cylinder position="-1.5 1 -0.75" radius="0.015" height="1" color="#ff6f00" rotation="0 90 90 "></a-cylinder>
+    <!--<a-cone position="-1.5 1 0.75" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 90 90 "></a-cone>-->
+    <a-cone position="-1.5 1 -1.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 90 -90"></a-cone>
+    </a-entity>
+    
+    <a-entity position="1 0 0 " rotation="0 45 0">
+    <!--Superficie cerrada con forma de cubo-->
+    <a-box color ="green" radius="0.5" height="0.75" width="0.75" depth="0.75" position="1.5 0.75 -0.25" opacity="" rotation="0 0 90">
+    </a-box> 
+    
+    <!--vectores  de área-->
+    <!--tapa superior e inferior-->
+    <a-cylinder position="1.5 0.75 -0.25" radius="0.025" height="1.5" color="#ff6f00" rotation="0 0 0"></a-cylinder>
+    <a-cone position="1.5 1.5 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 0"></a-cone>
+    <a-cone position="1.5 0 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="180 0 0"></a-cone>
+    <!--tapa izquierda y derecha-->
+    <a-cylinder position="1.5 0.75 -0.25" radius="0.025" height="1.5" color="#ff6f00" rotation="0 0 90"></a-cylinder>
+    <a-cone position="2.25 0.75 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 -90"></a-cone>
+    <a-cone position="0.75 0.75 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 90"></a-cone>
+    <!--tapa frontal y posterior-->
+    <a-cylinder position="1.5 0.75 -0.25" radius="0.025" height="1.5" color="#ff6f00" rotation="90 0 0"></a-cylinder>
+    <a-cone position="1.5 0.75 -1" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="-90 0 0"></a-cone>
+    <a-cone position="1.5 0.75 0.5" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="90 0 0"></a-cone>
+    
+    </a-entity>
+    
+    <!--Superficie cerrada con forma de esfera-->
+    
+    <a-sphere position="0" radius="0.85" color="green"></a-sphere>
+    
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 0 0"></a-cylinder>
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 0 45"></a-cylinder>
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 0 135"></a-cylinder>
+    <!--Puntas para la primera tanda de líneas de campo-->
+    <!--puntas para la línea vertical-->
+		<a-cone position="0 1 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 0"></a-cone>
+		<a-cone position="0 -1 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 180"></a-cone>
+    <!--puntas para la línea horizontal-->
+		<a-cone position="-1 0 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 90"></a-cone>
+		<a-cone position="1 0 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 -90"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="-0.707 0.707 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 45"></a-cone>
+		<a-cone position="0.707 -0.707 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 -135"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0.707 0.707 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 -45"></a-cone>
+		<a-cone position="-0.707 -0.707 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 135"></a-cone>
+		
+		<!--Segunda tanda de líneas de campo-->
+    
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 45 45"></a-cylinder>
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 45 90"></a-cylinder>
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 45 135"></a-cylinder>
+    <!--Puntas para la segunda tanda de líneas de campo-->
+    <!--puntas para la línea horizontal #fb30ff-->
+		<a-cone position="-0.707 0 0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 90"></a-cone>
+		<a-cone position="0.707 0 -0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 -90"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="-0.5 0.707 0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 45"></a-cone>
+		<a-cone position="0.5 -0.707 -0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 -135"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0.5 0.707 -0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 -45"></a-cone>
+		<a-cone position="-0.5 -0.707 0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 135"></a-cone>
+	
+		<!--Tercera tanda de líneas de campo-->
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 90 45"></a-cylinder>
+		<a-cylinder position="0 " radius="0.01" height="2" color="#f6ff00" rotation="0 90 90"></a-cylinder>
+		<a-cylinder position="0 " radius="0.01" height="2" color="#f6ff00" rotation="0 90 135"></a-cylinder>
+	
+    <!--Puntas para la tercera tanda de líneas -->
+    <!--puntas para la línea horizontal-->
+		<a-cone position="0 0 1" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 90"></a-cone>
+		<a-cone position="0 0 -1" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 -90"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="0 0.707 0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 45"></a-cone>
+		<a-cone position="0 -0.707 -0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 -135"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0 0.707 -0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 -45"></a-cone>
+		<a-cone position="0 -0.707 0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 135"></a-cone>
+
+		<a-cylinder position="0 " radius="0.01" height="2" color="#f6ff00" rotation="0 135 45"></a-cylinder>
+		<a-cylinder position="0 " radius="0.01" height="2" color="#f6ff00" rotation="0 135 90"></a-cylinder>
+		<a-cylinder position="0 " radius="0.01" height="2" color="#f6ff00" rotation="0 135 135"></a-cylinder>		
+    <!--puntas para la línea horizontal-->
+		<a-cone position="0.707 0 0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 90"></a-cone>
+		<a-cone position="-0.707 0 -0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 -90"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="0.5 0.707 0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 45"></a-cone>
+		<a-cone position="-0.5 -0.707 -0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 -135"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="-0.5 0.707 -0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 -45"></a-cone>
+		<a-cone position="0.5 -0.707 0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 135"></a-cone>
+    
+    </a-marker-camera>
+
+  
+  <a-marker-camera
+  type="pattern"
+    url="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt">
+
+    <!--Superficie cerrada con forma de cilindro-->
+    <a-entity position="-1 0 0" rotation="0 45 0">
+    <a-cylinder color ="green" radius="0.6" height="1.5" position="-1.5 1 -0.25" opacity="" rotation="0 0 90">
+    </a-cylinder>   
+    
+    <!--vectores de área-->
+    <!--tapa derecha-->
+    <a-cylinder position="-0.5 1.25 -0.25" radius="0.015" height="0.5" color="#ff6f00" rotation="0 0 90"></a-cylinder>
+    <a-cone position="-0.25 1.25 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 -90"></a-cone>
+    <!--tapa izquierda-->
+    <a-cylinder position="-2.5 1.25 -0.25" radius="0.015" height="0.5" color="#ff6f00" rotation="0 0 90"></a-cylinder>
+    <a-cone position="-2.75 1.25 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 90"></a-cone>
+    <!--Pared cilíndrica-->
+    <!--
+    <a-cylinder position="-1.5 1.75 -0.25" radius="0.015" height="0.5" color="#ff6f00" rotation="0 0 "></a-cylinder>
+    <a-cone position="-1.5 2 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 "></a-cone>
+-->
+    <!-- vector de área vertical para la pared cilindrica
+    <a-cylinder position="-1.5 1 -0.25" radius="0.015" height="2" color="#ff6f00" rotation="0 0 "></a-cylinder>
+    <a-cone position="-1.5 2 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 "></a-cone>
+    <a-cone position="-1.5 0 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 180"></a-cone>-->
+    <!-- vector de área horizontal para la pared cilindrica-->
+    <a-cylinder position="-1.5 1 -0.75" radius="0.015" height="1" color="#ff6f00" rotation="0 90 90 "></a-cylinder>
+    <!--<a-cone position="-1.5 1 0.75" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 90 90 "></a-cone>-->
+    <a-cone position="-1.5 1 -1.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 90 -90"></a-cone>
+    </a-entity>
+    
+    <a-entity position="1 0 0 " rotation="0 45 0">
+    <!--Superficie cerrada con forma de cubo-->
+    <a-box color ="green" radius="0.5" height="0.75" width="0.75" depth="0.75" position="1.5 0.75 -0.25" opacity="" rotation="0 0 90">
+    </a-box> 
+    
+    <!--vectores  de área-->
+    <!--tapa superior e inferior-->
+    <a-cylinder position="1.5 0.75 -0.25" radius="0.025" height="1.5" color="#ff6f00" rotation="0 0 0"></a-cylinder>
+    <a-cone position="1.5 1.5 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 0"></a-cone>
+    <a-cone position="1.5 0 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="180 0 0"></a-cone>
+    <!--tapa izquierda y derecha-->
+    <a-cylinder position="1.5 0.75 -0.25" radius="0.025" height="1.5" color="#ff6f00" rotation="0 0 90"></a-cylinder>
+    <a-cone position="2.25 0.75 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 -90"></a-cone>
+    <a-cone position="0.75 0.75 -0.25" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="0 0 90"></a-cone>
+    <!--tapa frontal y posterior-->
+    <a-cylinder position="1.5 0.75 -0.25" radius="0.025" height="1.5" color="#ff6f00" rotation="90 0 0"></a-cylinder>
+    <a-cone position="1.5 0.75 -1" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="-90 0 0"></a-cone>
+    <a-cone position="1.5 0.75 0.5" color="#ff6f00" radius-bottom="0.05" radius-top="0.005" height="0.05" rotation="90 0 0"></a-cone>
+    
+    </a-entity>
+    
+    <!--Superficie cerrada con forma de esfera-->
+    
+    <a-sphere position="0" radius="0.85" color="green"></a-sphere>
+    
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 0 0"></a-cylinder>
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 0 45"></a-cylinder>
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 0 135"></a-cylinder>
+    <!--Puntas para la primera tanda de líneas de campo-->
+    <!--puntas para la línea vertical-->
+		<a-cone position="0 1 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 0"></a-cone>
+		<a-cone position="0 -1 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 180"></a-cone>
+    <!--puntas para la línea horizontal-->
+		<a-cone position="-1 0 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 90"></a-cone>
+		<a-cone position="1 0 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 -90"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="-0.707 0.707 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 45"></a-cone>
+		<a-cone position="0.707 -0.707 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 -135"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0.707 0.707 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 -45"></a-cone>
+		<a-cone position="-0.707 -0.707 0" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 0 135"></a-cone>
+		
+		<!--Segunda tanda de líneas de campo-->
+    
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 45 45"></a-cylinder>
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 45 90"></a-cylinder>
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 45 135"></a-cylinder>
+    <!--Puntas para la segunda tanda de líneas de campo-->
+    <!--puntas para la línea horizontal #fb30ff-->
+		<a-cone position="-0.707 0 0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 90"></a-cone>
+		<a-cone position="0.707 0 -0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 -90"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="-0.5 0.707 0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 45"></a-cone>
+		<a-cone position="0.5 -0.707 -0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 -135"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0.5 0.707 -0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 -45"></a-cone>
+		<a-cone position="-0.5 -0.707 0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 45 135"></a-cone>
+	
+		<!--Tercera tanda de líneas de campo-->
+		<a-cylinder position="0" radius="0.01" height="2" color="#f6ff00" rotation="0 90 45"></a-cylinder>
+		<a-cylinder position="0 " radius="0.01" height="2" color="#f6ff00" rotation="0 90 90"></a-cylinder>
+		<a-cylinder position="0 " radius="0.01" height="2" color="#f6ff00" rotation="0 90 135"></a-cylinder>
+	
+    <!--Puntas para la tercera tanda de líneas -->
+    <!--puntas para la línea horizontal-->
+		<a-cone position="0 0 1" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 90"></a-cone>
+		<a-cone position="0 0 -1" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 -90"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="0 0.707 0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 45"></a-cone>
+		<a-cone position="0 -0.707 -0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 -135"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0 0.707 -0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 -45"></a-cone>
+		<a-cone position="0 -0.707 0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 90 135"></a-cone>
+
+		<a-cylinder position="0 " radius="0.01" height="2" color="#f6ff00" rotation="0 135 45"></a-cylinder>
+		<a-cylinder position="0 " radius="0.01" height="2" color="#f6ff00" rotation="0 135 90"></a-cylinder>
+		<a-cylinder position="0 " radius="0.01" height="2" color="#f6ff00" rotation="0 135 135"></a-cylinder>		
+    <!--puntas para la línea horizontal-->
+		<a-cone position="0.707 0 0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 90"></a-cone>
+		<a-cone position="-0.707 0 -0.707" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 -90"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="0.5 0.707 0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 45"></a-cone>
+		<a-cone position="-0.5 -0.707 -0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 -135"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="-0.5 0.707 -0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 -45"></a-cone>
+		<a-cone position="0.5 -0.707 0.5" color="#f6ff00" radius-bottom="0.025" radius-top="0.005" height="0.07" rotation="0 135 135"></a-cone>
+    
+  </a-marker-camera>
+  </a-scene>  
+</body>
+</html>
