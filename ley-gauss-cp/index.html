@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: opx; overflow: hidden">
+    <a-scene embedded arjs>
+      <a-marker
+        type="pattern"
+        url="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt">
+        <a-entity collada-model="#modeloblender" scale="0.1 0.1 0.1"></a-entity>
+
+        <a-entity
+          collada-model="#modeloblender1"
+          scale="0.1 0.1 0.1"
+          position="1.5 0 -1.5"
+        >
+          <a-animation
+            attribute="position"
+            to="0 0 0"
+            begin="25000"
+            dur="15000"
+            repeat="0"
+            direction="alternate"
+          ></a-animation>
+        </a-entity>
+
+        <a-sphere
+          color="#15ff00"
+          position="1.5 0 -1.5"
+          opacity="0.6"
+          scale="0.441022 0.441022 0.441022"
+        >
+          <a-animation
+            attribute="position"
+            to="0 0 0"
+            begin="25000"
+            dur="15000"
+            repeat="0"
+            direction="alternate"
+          ></a-animation>
+        </a-sphere>
+
+        <a-entity
+          collada-model="#modeloblender2"
+          scale="0.1 0.1 0.1"
+          position="-2.3 0 -1.5"
+        >
+          <a-animation
+            attribute="position"
+            to="0 0 0"
+            begin="2000"
+            dur="15000"
+            repeat="1"
+            direction="alternate"
+          ></a-animation>
+        </a-entity>
+
+        <a-box
+          color="#15ff00"
+          position="-2.3 0 -1.5"
+          opacity="0.6"
+          scale=".5576 .5576 .5576"
+        >
+          <a-animation
+            attribute="position"
+            to="0 0 0"
+            begin="2000"
+            dur="15000"
+            repeat="1"
+            direction="alternate"
+          ></a-animation>
+        </a-box>
+      </a-marker>
+
+      <!--Modelo carga puntual-->
+      <a-assets>
+        <a-asset-item
+          id="modeloblender"
+          src="Visualizacion campo carga puntual positivaA.dae"
+        >
+        </a-asset-item>
+        <!--Modelo vector diferencial esfera-->
+        <a-asset-item
+          id="modeloblender1"
+          src="Visualizacion campo carga puntual positiva-esfera.dae"
+        >
+        </a-asset-item>
+        <!--Modelo vectores diferenciales cubo-->
+        <a-asset-item
+          id="modeloblender2"
+          src="https://cdn.glitch.global/ce512594-b96c-4e2f-aac1-4e6d8d73203f/Visualizaci%C3%B3n%20carga%20puntual%20positiva-cubo.dae?v=1651639996152"
+        >
+        </a-asset-item>
+      </a-assets>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>

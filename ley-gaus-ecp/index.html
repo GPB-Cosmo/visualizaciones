@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+  <link rel="icon" href="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/icono.png" type="image/png">    
+<body style="margin : 0px; overflow: hidden; font-family: Monospace;">
+	
+	<a-scene embedded arjs>
+
+    <a-marker-camera preset="hiro">
+    <!--Carga positiva-->
+    
+		<a-sphere position="0" radius="0.05" color="red"></a-sphere>
+    
+    <!--Ejes auxiliares en sentido positivo y negativo-->
+    
+    <!--x gris--
+    <a-cylinder position="0" radius="0.05" height="8" color="gray" rotation="0 0 90" opacity="0.6"></a-cylinder>
+    <!--y Rojo 
+    <a-cylinder position="0" radius="0.05" height="8" color="red" rotation="0 90 0" opacity="0.6"></a-cylinder>
+    <!--z azul 
+    <a-cylinder position="0" radius="0.05" height="8" color="blue" rotation="90 0 0" opacity="0.6"></a-cylinder>
+
+    <!--Otros objetos auxiliares
+
+    <!--Primer tanda de líneas de fuerza -->
+    
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 0 0"></a-cylinder>
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 0 45"></a-cylinder>
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0" radius="0.0025" height="5" color="#de0bde" rotation="0 0 135"></a-cylinder>
+    <!--Puntas para la primera tanda de líneas de campo-->
+    <!--puntas para la línea vertical-->
+		<a-cone position="0 1 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 0" opacity="0.3"></a-cone>
+		<a-cone position="0 -1 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 180" opacity="0.3"></a-cone>
+    <!--puntas para la línea horizontal-->
+		<a-cone position="-1 0 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 90" opacity="0.3"></a-cone>
+		<a-cone position="1 0 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 -90" opacity="0.3"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="-0.707 0.707 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 45" opacity="0.3"></a-cone>
+		<a-cone position="0.707 -0.707 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 -135" opacity="0.3"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0.707 0.707 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 -45" opacity="0.3"></a-cone>
+		<a-cone position="-0.707 -0.707 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 135" opacity="0.3"></a-cone>
+		
+		<!--Segunda tanda de líneas de campo-->
+    
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 45 45"></a-cylinder>
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 45 90"></a-cylinder>
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 45 135"></a-cylinder>
+    <!--Puntas para la segunda tanda de líneas de campo-->
+    <!--puntas para la línea horizontal #fb30ff-->
+		<a-cone position="-0.707 0 0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 90" opacity="0.4"></a-cone>
+		<a-cone position="0.707 0 -0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 -90" opacity="0.4"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="-0.5 0.707 0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 45" opacity="0.4"></a-cone>
+		<a-cone position="0.5 -0.707 -0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 -135" opacity="0.4"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0.5 0.707 -0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 -45" opacity="0.4"></a-cone>
+		<a-cone position="-0.5 -0.707 0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 135" opacity="0.4"></a-cone>
+	
+		<!--Tercera tanda de líneas de campo-->
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 90 45"></a-cylinder>
+		<a-cylinder position="0 " radius="0.005" height="5" color="#de0bde" rotation="0 90 90"></a-cylinder>
+		<a-cylinder position="0 " radius="0.005" height="5" color="#de0bde" rotation="0 90 135"></a-cylinder>
+	
+    <!--Puntas para la tercera tanda de líneas de campo-->
+    <!--puntas para la línea horizontal-->
+		<a-cone position="0 0 1" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 90" opacity="0.4"></a-cone>
+		<a-cone position="0 0 -1" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 -90" opacity="0.4"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="0 0.707 0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 45" opacity="0.4"></a-cone>
+		<a-cone position="0 -0.707 -0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 -135" opacity="0.4"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0 0.707 -0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 -45" opacity="0.4"></a-cone>
+		<a-cone position="0 -0.707 0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 135" opacity="0.4"></a-cone>
+
+		<!--Cuarta tanda de líneas de campo-->
+		<a-cylinder position="0 " radius="0.005" height="5" color="#de0bde" rotation="0 135 45"></a-cylinder>
+		<a-cylinder position="0 " radius="0.005" height="5" color="#de0bde" rotation="0 135 90"></a-cylinder>
+		<a-cylinder position="0 " radius="0.005" height="5" color="#de0bde" rotation="0 135 135"></a-cylinder>
+		<!--Puntas para la cuarta tanda de líneas de campo-->
+    <!--puntas para la línea horizontal-->
+		<a-cone position="0.707 0 0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 90" opacity="0.4"></a-cone>
+		<a-cone position="-0.707 0 -0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 -90" opacity="0.4"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="0.5 0.707 0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 45" opacity="0.4"></a-cone>
+		<a-cone position="-0.5 -0.707 -0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 -135" opacity="0.4"></a-cone>
+    <!--<a-marker-camera preset="hiro"> </a-marker-camera>	
+puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="-0.5 0.707 -0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 -45" opacity="0.4"></a-cone>
+		<a-cone position="0.5 -0.707 0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 135" opacity="0.4"></a-cone>
+    <!--Superficie cerrada imaginaria-->
+    
+    <a-sphere color ="green" position="0 0 0" opacity="0.4">
+    </a-sphere>
+    
+    <!--Vectores dA sobre la esfera-->
+    <a-sphere position="0.7 0.7 0" radius="0.045" color="yellow"></a-sphere>
+    <a-cylinder position="0.9 0.9 0" radius="0.01" height="0.5" color="yellow" rotation="0 0 135"></a-cylinder>
+    <a-cone position="1.1 1.1 0" color="yellow" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 -45"></a-cone>
+    </a-marker-camera>
+    
+    <a-marker-camera
+                     type="pattern"
+        url="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt">
+      <!--Carga positiva-->
+    
+		<a-sphere position="0" radius="0.05" color="red"></a-sphere>
+    
+    <!--Primer tanda de líneas de fuerza -->
+    
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 0 0"></a-cylinder>
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 0 45"></a-cylinder>
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0" radius="0.0025" height="5" color="#de0bde" rotation="0 0 135"></a-cylinder>
+    <!--Puntas para la primera tanda de líneas de campo-->
+    <!--puntas para la línea vertical-->
+		<a-cone position="0 1 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 0" opacity="0.3"></a-cone>
+		<a-cone position="0 -1 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 180" opacity="0.3"></a-cone>
+    <!--puntas para la línea horizontal-->
+		<a-cone position="-1 0 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 90" opacity="0.3"></a-cone>
+		<a-cone position="1 0 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 -90" opacity="0.3"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="-0.707 0.707 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 45" opacity="0.3"></a-cone>
+		<a-cone position="0.707 -0.707 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 -135" opacity="0.3"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0.707 0.707 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 -45" opacity="0.3"></a-cone>
+		<a-cone position="-0.707 -0.707 0" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 135" opacity="0.3"></a-cone>
+		
+		<!--Segunda tanda de líneas de campo-->
+    
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 45 45"></a-cylinder>
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 45 90"></a-cylinder>
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 45 135"></a-cylinder>
+    <!--Puntas para la segunda tanda de líneas de campo-->
+    <!--puntas para la línea horizontal #fb30ff-->
+		<a-cone position="-0.707 0 0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 90" opacity="0.4"></a-cone>
+		<a-cone position="0.707 0 -0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 -90" opacity="0.4"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="-0.5 0.707 0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 45" opacity="0.4"></a-cone>
+		<a-cone position="0.5 -0.707 -0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 -135" opacity="0.4"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0.5 0.707 -0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 -45" opacity="0.4"></a-cone>
+		<a-cone position="-0.5 -0.707 0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 45 135" opacity="0.4"></a-cone>
+	
+		<!--Tercera tanda de líneas de campo-->
+		<a-cylinder position="0" radius="0.005" height="5" color="#de0bde" rotation="0 90 45"></a-cylinder>
+		<a-cylinder position="0 " radius="0.005" height="5" color="#de0bde" rotation="0 90 90"></a-cylinder>
+		<a-cylinder position="0 " radius="0.005" height="5" color="#de0bde" rotation="0 90 135"></a-cylinder>
+	
+    <!--Puntas para la tercera tanda de líneas de campo-->
+    <!--puntas para la línea horizontal-->
+		<a-cone position="0 0 1" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 90" opacity="0.4"></a-cone>
+		<a-cone position="0 0 -1" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 -90" opacity="0.4"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="0 0.707 0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 45" opacity="0.4"></a-cone>
+		<a-cone position="0 -0.707 -0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 -135" opacity="0.4"></a-cone>
+    <!--puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="0 0.707 -0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 -45" opacity="0.4"></a-cone>
+		<a-cone position="0 -0.707 0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 90 135" opacity="0.4"></a-cone>
+
+		<!--Cuarta tanda de líneas de campo-->
+		<a-cylinder position="0 " radius="0.005" height="5" color="#de0bde" rotation="0 135 45"></a-cylinder>
+		<a-cylinder position="0 " radius="0.005" height="5" color="#de0bde" rotation="0 135 90"></a-cylinder>
+		<a-cylinder position="0 " radius="0.005" height="5" color="#de0bde" rotation="0 135 135"></a-cylinder>
+		<!--Puntas para la cuarta tanda de líneas de campo-->
+    <!--puntas para la línea horizontal-->
+		<a-cone position="0.707 0 0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 90" opacity="0.4"></a-cone>
+		<a-cone position="-0.707 0 -0.707" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 -90" opacity="0.4"></a-cone>
+    <!--puntas para la línea a 45, 10:30 y 4:30-->
+		<a-cone position="0.5 0.707 0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 45" opacity="0.4"></a-cone>
+		<a-cone position="-0.5 -0.707 -0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 -135" opacity="0.4"></a-cone>
+    <!--<a-marker-camera preset="hiro"> </a-marker-camera>	
+puntas para la línea a 45, 1:30 y 7:30-->
+		<a-cone position="-0.5 0.707 -0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 -45" opacity="0.4"></a-cone>
+		<a-cone position="0.5 -0.707 0.5" color="#de0bde" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 135 135" opacity="0.4"></a-cone>
+    <!--Superficie cerrada imaginaria-->
+    
+    <a-sphere color ="green" position="0 0 0" opacity="0.4">
+    </a-sphere>
+    
+    <!--Vectores dA sobre la esfera-->
+    <a-sphere position="0.7 0.7 0" radius="0.045" color="yellow"></a-sphere>
+    <a-cylinder position="0.9 0.9 0" radius="0.01" height="0.5" color="yellow" rotation="0 0 135"></a-cylinder>
+    <a-cone position="1.1 1.1 0" color="yellow" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 -45"></a-cone>
+    
+      </a-marker-camera>	
+		
+  </a-scene>
+</body>
+</html>
