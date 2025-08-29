@@ -137,8 +137,8 @@
       
       <!--Superficies de colores-->  
       <!--Morado--->
-      <a-plane position="-1 1 -0.15" color="#00ff00" rotation="0 90 0">
-      <a-animation attribute="rotation" to="0 0 0" dur="10000" direction="alternate" repeat="indefinite" ></a-animation>
+      <a-plane position="-1 1 -0.15" color="#00ff00" rotation="0 90 0" animation="property:rotation; to:0 0 0; dur:10000;dir:alternate; loop:true;">
+      
       </a-plane>     
     </a-marker-camera>	
       <a-cone position="0 1.5 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
@@ -259,10 +259,7 @@
 		<a-cone position="0 1.5 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
     <a-cone position="0 1.5 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
       
-    </a-marker-camera>	
-    
-    
-		
+    </a-marker-camera>			
   </a-scene>
 </body>
 </html>
