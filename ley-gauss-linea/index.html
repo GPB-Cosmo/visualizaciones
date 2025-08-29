@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: opx; overflow: hidden">
+    <a-scene embedded arjs>
+      <a-marker
+        type="pattern"
+        url="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt">
+        <a-entity collada-model="#modeloblender" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity collada-model="#modeloblender1" scale="0.1 0.1 0.1" position="2 0 -1.5">
+        <a-animation
+                     attribute="position"
+                     to="0 0 0"
+                     begin="3000"
+                     dur="5000"
+                     repeat="0"
+                     direction="alternate"
+                     ></a-animation>                                    
+        </a-entity>
+        
+<a-cylinder position="2 0 -1.5" radius="0.203241" height="0.85588" color="#15ff00" opacity="0.6" rotation="0 0 90">
+  <a-animation
+                     attribute="position"
+                     to="0 0 0"
+                     begin="3000"
+                     dur="5000"
+                     repeat="0"
+                     direction="alternate"
+                     ></a-animation> 
+        </a-cylinder>               
+      </a-marker>
+
+      <!--Modelo línea de carga-->
+      <a-assets>
+        <a-asset-item
+          id="modeloblender"
+          src="Visualización linea de carga(a).dae"
+        ></a-asset-item>
+        <!--Modelo superficie-->
+        <a-asset-item
+          id="modeloblender1"
+          src="Visualización linea de carga (2).dae"
+        ></a-asset-item>
+      </a-assets>
+      
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>

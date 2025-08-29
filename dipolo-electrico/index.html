@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>   
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <link rel="icon" href="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/icono.png" type="image/png">    
+  </head>
+  <body style = "margin:opx;overflow:hidden;">
+    <a-scene embedded arjs>
+              <a-marker-camera preset="hiro"> 
+                <a-entity collada-model="#modeloblender" scale="4 4 4"></a-entity>
+      </a-marker-camera>    
+
+      <!--Modelo-->
+        <a-assets>
+               <a-asset-item id="modeloblender" src="dipoloelectrco.dae"></a-asset-item>        
+      </a-assets>                      
+    <!--<a-entity camera></a-entity>-->
+      <a-marker-camera type="pattern" 
+      url="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt">
+                <a-entity collada-model="#modeloblender" scale="4 4 4"></a-entity>
+      </a-marker-camera>
+                
+      
+    </a-scene>
+  </body>
+</html>

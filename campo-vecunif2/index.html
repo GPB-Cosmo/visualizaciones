@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link rel="icon" href="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/icono.png" type="image/png">    
+    </head>
+<body style="margin : 0px; overflow: hidden; font-family: Monospace;">
+	
+	<a-scene embedded arjs="sourceType: webcam;">
+    <!--Ejes auxiliares en sentido positivo y negativo-->
+    
+    <!--x gris
+    <a-cylinder position="0" radius="0.05" height="8" color="gray" rotation="0 0 90" opacity="0.6"></a-cylinder>
+    <!--y Rojo
+    <a-cylinder position="0" radius="0.05" height="8" color="red" rotation="0 90 0" opacity="0.6"></a-cylinder>
+    <!--z azul
+    <a-cylinder position="0" radius="0.05" height="8" color="blue" rotation="90 0 0" opacity="0.6"></a-cylinder>
+-->
+
+    <!--Primer tanda de líneas de fuerza -->
+    <a-marker-camera preset="hiro">
+		<a-cylinder position="0 0 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    
+    <!--Puntas para la primera tanda de líneas de campo-->
+		<a-cone position="0 0 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 0 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    
+      <a-cylinder position="0 0.25 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.25 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.25 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.25 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.25 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.25 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.25 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+      
+      <a-cone position="0 0.25 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.25 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.25 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.25 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.25 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.25 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 0.25 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+      
+     <a-cylinder position="0 0.5 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.5 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.5 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.5 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.5 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.5 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.5 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>  
+      
+    <a-cone position="0 0.5 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.5 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.5 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.5 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.5 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.5 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 0.5 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+
+      <a-cylinder position="0 0.75 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.75 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.75 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.75 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.75 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.75 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.75 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>  
+      
+      <a-cone position="0 0.75 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.75 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.75 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.75 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.75 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.75 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 0.75 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+      
+      <a-cylinder position="0 1 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>  
+      
+      <a-cone position="0 1 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 1 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+      
+      <a-cylinder position="0 1.25 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.25 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1.25 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.25 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.25 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.25 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1.25 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+      
+      <a-cone position="0 1.25 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.25 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.25 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.25 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.25 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.25 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 1.25 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+      
+      <a-cylinder position="0 1.5 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.5 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1.5 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.5 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.5 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.5 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1.5 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+      
+      <a-cone position="0 1.5 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.5 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.5 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.5 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.5 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.5 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 1.5 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+      
+      <!--Superficies de colores-->  
+      <!--Morado--->
+      <a-plane position="-1 1 -0.15" color="#00ff00" rotation="0 90 0"></a-plane>
+      <!--azul-->
+      <a-plane position="0.5 1 -0.15" color="gray" rotation="0 35 0" ></a-plane>
+      <!--Amarillo-->
+      <a-plane position="2 1 -0.15" color="gray" rotation="0 0 0"></a-plane>
+
+    <!--<a-box position="0 0.75 0" width="6" height="5" color="yellow" rotation="0 0 90" opacity="0.2"></a-box>-->
+
+    </a-marker-camera>	
+    
+    <a-marker-camera type="pattern"
+	url="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt">
+      
+		<a-cylinder position="0 0 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    
+    <!--Puntas para la primera tanda de líneas de campo-->
+		<a-cone position="0 0 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 0 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    
+      <a-cylinder position="0 0.25 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.25 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.25 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.25 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.25 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.25 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.25 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+      
+      <a-cone position="0 0.25 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.25 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.25 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.25 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.25 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.25 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 0.25 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+      
+     <a-cylinder position="0 0.5 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.5 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.5 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.5 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.5 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.5 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.5 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>  
+      
+    <a-cone position="0 0.5 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.5 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.5 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.5 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.5 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.5 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 0.5 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+
+      <a-cylinder position="0 0.75 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.75 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.75 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.75 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.75 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 0.75 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 0.75 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>  
+      
+      <a-cone position="0 0.75 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.75 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.75 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.75 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.75 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 0.75 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 0.75 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+      
+      <a-cylinder position="0 1 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>  
+      
+      <a-cone position="0 1 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 1 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+      
+      <a-cylinder position="0 1.25 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.25 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1.25 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.25 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.25 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.25 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1.25 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+      
+      <a-cone position="0 1.25 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.25 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.25 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.25 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.25 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.25 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 1.25 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+      
+      <a-cylinder position="0 1.5 0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.5 0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1.5 0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.5 0" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.5 -0.25" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+		<a-cylinder position="0 1.5 -0.5" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+    <a-cylinder position="0 1.5 -0.75" radius="0.005" height="5" color="#9900ff" rotation="0 0 90"></a-cylinder>
+      
+      <a-cone position="0 1.5 0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.5 0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.5 0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.5 0" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.5 -0.25" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+		<a-cone position="0 1.5 -0.5" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+    <a-cone position="0 1.5 -0.75" color="#9900ff" radius-bottom="0.025" radius-top="0.005" height="0.05" rotation="0 0 -90" opacity="0.5"></a-cone>
+      
+      <!--Superficies de colores-->  
+      <!--Morado--->
+      <a-plane position="-1 1 -0.15" color="#00ff00" rotation="0 90 0"></a-plane>
+      <!--azul-->
+      <a-plane position="0.5 1 -0.15" color="gray" rotation="0 35 0" ></a-plane>
+      <!--Amarillo-->
+      <a-plane position="2 1 -0.15" color="gray" rotation="0 0 0"></a-plane>
+
+    <!--<a-box position="0 0.75 0" width="6" height="5" color="yellow" rotation="0 0 90" opacity="0.2"></a-box>-->
+
+    </a-marker-camera>	
+    
+  </a-scene>
+</body>
+</html>
+
