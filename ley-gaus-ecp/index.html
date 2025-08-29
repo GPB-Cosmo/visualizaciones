@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
-<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
-  <link rel="icon" href="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/icono.png" type="image/png">    
+	<head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link rel="icon" href="https://cdn.glitch.com/4b280b2d-a546-43eb-95ad-5d0cedbb8304%2Ficono.png?v=1621562191466" type="image/png">    
+  </head>  
 <body style="margin : 0px; overflow: hidden; font-family: Monospace;">
 	
 	<a-scene embedded arjs>
@@ -101,9 +103,9 @@ puntas para la línea a 45, 1:30 y 7:30-->
     <a-cone position="1.1 1.1 0" color="yellow" radius-bottom="0.05" radius-top="0.005" height="0.125" rotation="0 0 -45"></a-cone>
     </a-marker-camera>
     
-    <a-marker-camera
-                     type="pattern"
-        url="https://vscode.dev/github/GPB-Cosmo/visualizaciones/blob/main/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt">
+    <a-marker-camera          
+        type="pattern" preset="custom" 
+        url="https://rawcdn.githack.com/GPB-Cosmo/visualizaciones/1e9b1d810ed11a65736f5554b72549858bf84d88/Pulsar/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt">		
       <!--Carga positiva-->
     
 		<a-sphere position="0" radius="0.05" color="red"></a-sphere>
