@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link rel="icon" href="https://cdn.glitch.com/4b280b2d-a546-43eb-95ad-5d0cedbb8304%2Ficono.png?v=1621562191466" type="image/png">    
+  </head>  
+
+     <body style="margin : 0px; overflow: hidden; font-family: Monospace;">    
+	<a-scene embedded arjs>
+        <a-assets>
+        <a-asset-item
+          id="circuito"
+          src="exp2 circuito.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="iman"
+          src="exp2 iman.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="lineas"
+          src="exp2 lineas corriente.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="lineas2"
+          src="exp2 lineas corriente 2.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="aguja"
+          src="exp2 aguja.glb"
+        ></a-asset-item>
+      </a-assets>    
+      <a-marker
+       type="pattern" preset="custom" 
+        url="https://rawcdn.githack.com/GPB-Cosmo/visualizaciones/1e9b1d810ed11a65736f5554b72549858bf84d88/Pulsar/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt">		
+        <a-entity scale=".1 .1 .1" rotation="0 0 0" position="0 0 0">
+          
+        <!--MODELO DEl EXPERIMENTO COMPLETO
+        <a-entity
+          gltf-model="url(https://cdn.glitch.global/2492447c-a21a-428d-b76c-de5d45dedaae/exp2l.glb?v=1715799657918)"          
+        ></a-entity>-->
+          
+          <!--MODELO CIRCUITO-->
+        <a-entity
+          gltf-model="#circuito"
+                  position="0 0 0"
+        ></a-entity>
+        
+          
+          <!--MODELO IMAN-->
+        <a-entity
+          gltf-model="#iman"
+                  position="4 0 0"
+                  animation="property: position; to: -10 0 0; dur:4000 ;delay:2000;"
+                  animation__2="property:position; from:-10 0 0;to:4 0 0; dur:4000; delay: 10000;"
+        ></a-entity>
+          
+          <!--MODELO LINEAS-->
+        <a-entity
+          gltf-model="#lineas"
+                  position="0 0 0"
+                  visible="false"
+                  animation="property:visible; to: true; dur:4000 ;delay:0;"
+                  animation__2="property:visible; to: false; dur:4000 ;delay:6000;"
+        ></a-entity> 
+          
+          <!--MODELO LINEAS AL REVES-->
+        <a-entity
+          gltf-model="#lineas2"
+                  position="0 0 0"
+                  visible="false"
+                  animation="property:visible; to: true; dur:0 ;delay:10500;"
+                  animation__2="property:visible; to: false; dur:0 ;delay:14000;"
+        ></a-entity> 
+          
+         <!--MODELO AGUJA-->
+        <a-entity
+          gltf-model="#aguja"
+                  position="-20 -6.4 1"
+                  animation="property:rotation; to:0 45 0; dur:4000 ;delay:2500;"
+                  animation__3="property:rotation; to:0 0 0; dur:00 ;delay:0000;"
+                  
+        ></a-entity>          
+         </a-entity>
+         </a-marker>
+        <a-entity camera></a-entity>
+        
+    </a-scene>
+  </body>
+</html>
