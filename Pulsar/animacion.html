@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <link rel="icon" href="https://cdn.glitch.com/4b280b2d-a546-43eb-95ad-5d0cedbb8304%2Ficono.png?v=1621562191466" type="image/png">    
+  </head>    
+  <body>
+    <a-scene >        
+      
+        <a-sphere position="0 0 -5" radius=".25" color="blue" material="shader:phong; reflectivity: 0.9; shininess: 3000; specular:red;"></a-sphere>
+      <!--<a-sphere position="0 0 -5" radius=".25" color="blue" emissive="green" emissiveIntensity="100" opacity="1"></a-sphere>-->
+        <a-sphere position="0 0 -5" radius=".25" color="#EF2D5E" opacity="1"
+            animation="property:scale;to:15 15 15;loop:1; dur:10000;"
+            animation__2="property:opacity;to:0.2;loop:1; dur:10000;"
+            animation__3="property:scale;from:15 15 15; to:.125 .125 .125 ;loop:1; delay:10000;dur:10000;"
+            animation__2="property:opacity;from:0.2;to:1;loop:1;delay:10000;dur:10000;"
+      ></a-sphere>
+      <a-entity camera></a-entity>
+      <a-sky color="black"></a-sky>
+    </a-scene>
+  </body>
+</html>
