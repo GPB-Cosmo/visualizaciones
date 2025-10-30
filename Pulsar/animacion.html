@@ -1,19 +1,25 @@
 <!DOCTYPE html>
   <html>
   <head>
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <link rel="icon" href="https://cdn.glitch.com/4b280b2d-a546-43eb-95ad-5d0cedbb8304%2Ficono.png?v=1621562191466" type="image/png">    
   </head>    
   <body>
-    <a-scene >        
+    <a-scene >  
       
-        <a-sphere position="0 0 -5" radius=".25" color="red" material="shader:phong; reflectivity: 0.9; shininess: 3000; specular:red;"
+      <a-assets>
+            <audio id="narracion" src="Texto pulsar (audio 2 ElevenLabs).mp3"></a-asset-item>
+          </a-assets>      
+      
+        <a-sound src="#narracion" autoplay></a-sound>
+
+          <a-sphere position="0 0 -5" radius=".25" color="red" material="shader:phong; reflectivity: 0.9; shininess: 3000; specular:red;"
         animation="property:scale;to:.10 .10 .10;loop:1; dur:800;"  
         ></a-sphere>
 
       <a-sphere position="0 0 -5" radius=".02" color="white" opacity="1"
         animation="property:scale;to:200 200 200;loop:1; dur:800;delay:1000;"
-        animation__2="property:visible;to:false;loop:1;delay:2500; ;">
+        animation__2="property:visible;to:false;loop:1;delay:2500;">
       </a-sphere>  
       
       
