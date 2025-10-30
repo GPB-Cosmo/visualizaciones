@@ -7,14 +7,24 @@
   <body>
     <a-scene >        
       
-        <a-sphere position="0 0 -5" radius=".25" color="blue" material="shader:phong; reflectivity: 0.9; shininess: 3000; specular:red;"></a-sphere>
+        <a-sphere position="0 0 -5" radius=".25" color="red" material="shader:phong; reflectivity: 0.9; shininess: 3000; specular:red;"
+        animation="property:scale;to:.10 .10 .10;loop:1; dur:800;"  
+        ></a-sphere>
+
+      <a-sphere position="0 0 -5" radius=".02" color="white" opacity="1"
+        animation="property:scale;to:200 200 200;loop:1; dur:800;delay:1000;"
+        animation__2="property:visible;to:false;loop:1;delay:2500; ;">
+      </a-sphere>  
+      
+      
       <!--<a-sphere position="0 0 -5" radius=".25" color="blue" emissive="green" emissiveIntensity="100" opacity="1"></a-sphere>-->
-        <a-sphere position="0 0 -5" radius=".25" color="#EF2D5E" opacity="1"
-            animation="property:scale;to:15 15 15;loop:1; dur:10000;"
+        <!--
+      <a-sphere position="0 0 -5" radius=".25" color="white" opacity="1"
+            animation="property:scale;to:20 20 20;loop:1; dur:800;delay:1000;"
             animation__2="property:opacity;to:0.2;loop:1; dur:10000;"
             animation__3="property:scale;from:15 15 15; to:.125 .125 .125 ;loop:1; delay:10000;dur:10000;"
             animation__2="property:opacity;from:0.2;to:1;loop:1;delay:10000;dur:10000;"
-      ></a-sphere>
+      ></a-sphere>-->
       <a-entity camera></a-entity>
       <a-sky color="black"></a-sky>
     </a-scene>
