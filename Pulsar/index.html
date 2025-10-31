@@ -9,22 +9,36 @@
     
     <a-scene>      
           <a-assets >
-            <video id="video1" autoplay loop="false" src="https://rawcdn.githack.com/GPB-Cosmo/visualizaciones/7260d37db77b9c1f3ca0ce6bef0f07f963c858fe/Pulsar/primero.mp4"></video>
+            <!--<video id="video1" autoplay loop="false" src="https://rawcdn.githack.com/GPB-Cosmo/visualizaciones/7260d37db77b9c1f3ca0ce6bef0f07f963c858fe/Pulsar/primero.mp4"></video>-->
             <a-asset-item id="estrellaCampo" src="estrella-campo.glb"></a-asset-item>
+            <audio id="narracion" src="Texto pulsar (audio 2 ElevenLabs).mp3" preload="auto"></a-asset-item>
           </a-assets>      
-      
-        <!--<a-marker preset="hiro">-->
+        
           <a-marker          
         type="pattern" preset="custom" 
-        url="https://rawcdn.githack.com/GPB-Cosmo/visualizaciones/1e9b1d810ed11a65736f5554b72549858bf84d88/Pulsar/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt">
+        url="https://rawcdn.githack.com/GPB-Cosmo/visualizaciones/1e9b1d810ed11a65736f5554b72549858bf84d88/Pulsar/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt"
+        sound="src: #narracion; autoplay:true; volume: 1.0;"
+        >
 
-        <a-video position="0 0 0" rotation="90 0 0" src="#video1" width="3.2" height="1.8"                   
+        <!--<a-video position="0 0 0" rotation="90 0 0" src="#video1" width="3.2" height="1.8"                   
                    animation="property: visible ; to: false;loop:1; delay:62000;"
                    animation__2="property: visible ; to: true;loop:1; delay:216000;"
-                   ></a-video>        
+                   ></a-video>-->
 
+        <a-sphere position="0 0 0" radius=".25" color="red" material="shader:phong; reflectivity: 0.9; shininess: 3000; specular:red;"
+        animation="property:scale;to:.10 .10 .10;loop:1;dur:3000;delay:5000;"
+        animation__2="property:visible;to:false;loop:1;delay:64000;"          
+        ></a-sphere>
+
+      <a-sphere position="0 0 0" radius=".02" color="white" opacity="1"
+        animation="property:scale;to:200 200 200;loop:1;dur:3000;delay:8000;"
+        animation__2="property:visible;to:false;loop:1;delay:13000;">
+      </a-sphere>
+
+      <!--poner al rededor al final de las animaciones anteiores el remanente de supernova-->
           <a-entity rotation="0 0 25">        
-      <a-entity visible="false"                
+      <a-entity visible="false"
+                scale="0.5 0.5 0.5"                  
                 gltf-model="#estrellaCampo"                
                 animation="property: visible;to:true;loop:1;delay:64000;"
                 animation__2="property:rotation; dur:1500; to: 0 -360 0; easing: linear; loop:true; delay:0;" 
@@ -34,6 +48,7 @@
         
         <a-entity  rotation="0 0 25">  
         <a-entity visible="false" 
+                scale="0.5 0.5 0.5"                  
                 gltf-model="#estrellaCampo"                
                 animation__4="property: visible;to:true;loop:1;delay:191000;"
                 animation__5="property:rotation; dur:89; to: 0 -360 0; easing: linear; loop:true; delay:0;"

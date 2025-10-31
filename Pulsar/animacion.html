@@ -7,17 +7,18 @@
   <body>
     <a-scene >  
       
-      <a-assets>
+      <a-assets>            
             <audio id="narracion" src="Texto pulsar (audio 2 ElevenLabs).mp3" preload="auto"></a-asset-item>
           </a-assets>      
       
-        <a-sound src="#narracion" autoplay></a-sound>
+          <a-entity camera look-controls>
+        <a-cursor></a-cursor>
+      </a-entity>
 
           <a-sphere position="0 0 -5" radius=".25" color="red" material="shader:phong; reflectivity: 0.9; shininess: 3000; specular:red;"
-        animation="property:scale;to:.10 .10 .10;loop:1; dur:800;"  
+        animation="property:scale;to:.10 .10 .10;loop:1; dur:800;"
+        sound="src: #narracion; on: click; volume: 1.0"  
         ></a-sphere>
-        
-            <a-entity position="0 0 0" sound="src:narracion;"></a-entity>
 
       <a-sphere position="0 0 -5" radius=".02" color="white" opacity="1"
         animation="property:scale;to:200 200 200;loop:1; dur:800;delay:1000;"
