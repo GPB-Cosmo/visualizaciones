@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style = "margin:opx;overflow:hidden;">
+    <a-scene embedded arjs>
+      
+      <!--Modelo-->
+        <a-assets>
+               <a-asset-item id="modeloblender" src="https://cdn.glitch.com/modelo8531a5bb-5fcf-4d3c-8177-4aaf145e8cf7%2Fcapacitor.dae?v=1629065196110"></a-asset-item>        
+      </a-assets>
+        
+      <!--Marcador-->
+      <a-marker type="pattern" url="https://cdn.glitch.com/8531a5bb-5fcf-4d3c-8177-4aaf145e8cf7%2Fddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt?v=1612887062507">
+        <a-entity collada-model="#modeloblender" scale=".15 .15 .15"></a-entity>
+      </a-marker>       
+                  
+    <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
