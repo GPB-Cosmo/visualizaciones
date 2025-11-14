@@ -10,8 +10,12 @@
     <a-scene>      
           <a-assets >
             <!--<video id="video1" autoplay loop="false" src="https://rawcdn.githack.com/GPB-Cosmo/visualizaciones/7260d37db77b9c1f3ca0ce6bef0f07f963c858fe/Pulsar/primero.mp4"></video>-->
-            <a-asset-item id="estrellaCampo" src="estrella-campo.glb"></a-asset-item>
-            <audio id="narracion" src="Texto pulsar (audio 2 ElevenLabs).mp3" preload="auto"></a-asset-item>
+            <a-asset-item id="estrellaCampo" src="modelo decimated.glb"></a-asset-item>
+            <a-asset-item id="letreros" src="letreros.glb"></a-asset-item>
+            <a-asset-item id="resortes" src="resortes.mp4"></a-asset-item>    
+            <a-asset-item id="estrellaCampoJets" src="estrella-campo-jets.glb"></a-asset-item>                      
+            <audio id="pulsos" src="b0329+54.mp3" preload="auto"></a-asset-item>
+            <!--<audio id="narracion" src="Texto pulsar (audio 2 ElevenLabs).mp3" preload="auto"></a-asset-item>-->
           </a-assets>      
         
           <a-marker          
@@ -25,35 +29,68 @@
                    animation__2="property: visible ; to: true;loop:1; delay:216000;"
                    ></a-video>-->
 
-        <a-sphere position="0 0 0" radius=".25" color="red" material="shader:phong; reflectivity: 0.9; shininess: 3000; specular:red;"
+                   <!--LISTO    
+        <a-sphere position="0 0 0" radius="0.4" color="red" material="shader:phong; reflectivity: 0.9; shininess: 3000; specular:red;"
         animation="property:scale;to:.10 .10 .10;loop:1;dur:3000;delay:5000;"
         animation__2="property:visible;to:false;loop:1;delay:64000;"          
-        ></a-sphere>
+        ></a-sphere> -->
 
-      <a-sphere position="0 0 0" radius=".02" color="white" opacity="1"
+      <!--LISTO    
+        <a-sphere position="0 0 0" radius=".02" color="white" opacity="1"
         animation="property:scale;to:200 200 200;loop:1;dur:3000;delay:8000;"
-        animation__2="property:visible;to:false;loop:1;delay:13000;">
-      </a-sphere>
-
+        animation__3="property:opacity;from 1; to:0.5;loop:1;dur:12000;delay:8000;"
+        animation__2="property:visible;to:false;loop:1; dur:4000;delay:20000;">
+        <!--añadir alguno de los siguientes filamentos de remanente:
+        https://www.shadertoy.com/view/XdVXWc 
+        https://www.shadertoy.com/view/MlyXWy
+        https://www.shadertoy.com/view/lsyXDK
+        https://www.shadertoy.com/view/XdKSDV
+        https://www.shadertoy.com/view/XtVBWy
+         -->        
+      </a-sphere>-->
       <!--poner al rededor al final de las animaciones anteiores el remanente de supernova-->
-          <a-entity rotation="0 0 25">        
+
+      <!--LISTO    
+      <a-entity rotation="90 -90 90">        
       <a-entity visible="false"
-                scale="0.5 0.5 0.5"                  
+                scale="0.25 0.25 0.25"                  
                 gltf-model="#estrellaCampo"                
-                animation="property: visible;to:true;loop:1;delay:64000;"
+                animation="property: visible;to:true;loop:1;delay:20000;"
                 animation__2="property:rotation; dur:1500; to: 0 -360 0; easing: linear; loop:true; delay:0;" 
                 animation__3="property:visible; to:false;loop:1; delay:191000;"                
+                ></a-entity>   
+                <a-entity rotation="0 180 0"
+                scale="0.25 0.25 0.25"                  
+                gltf-model="#letreros"      
+                animation="property: visible;to:true;loop:1;delay:20000;"
+                animation__2="property:visible; to:false;loop:1; delay:191000;"                                          
                 ></a-entity>        
     </a-entity>
-        
-        <a-entity  rotation="0 0 25">  
+    -->
+
+       <!-- PONER UNAS SEIS VECES A QUE PASE AL SIGUIENTE 
+    <a-video position="0 0 0" rotation="-90 0 0" src="#resortes" width="3.2" height="1.8"                                      
+                   ></a-video> --> 
+
+<a-entity rotation="-45 -45 25">        
+      <a-entity 
+                scale="0.25 0.25 0.25"                  
+                gltf-model="#estrellaCampoJets"                                
+                animation__2="property:rotation; dur:1500; to: 0 -360 0; easing: linear; loop:true; delay:0;"                 
+                ></a-entity>                   
+                </a-entity>
+    </a-entity> 
+
+        <a-entity  rotation="-215 -215 25">  
         <a-entity visible="false" 
                 scale="0.5 0.5 0.5"                  
                 gltf-model="#estrellaCampo"                
                 animation__4="property: visible;to:true;loop:1;delay:191000;"
-                animation__5="property:rotation; dur:89; to: 0 -360 0; easing: linear; loop:true; delay:0;"
+                animation="property:rotation; dur:307; to: 0 360 0; easing: linear; loop:true; delay:0;"
                 animation__6="property:visible; to:false;loop:1; delay:216000;"                
+                sound="src: #pulsos; autoplay:true; volume: 5.0; on:click;"
                 ></a-entity> 
+                
           </a-entity> 
         
         <!--
