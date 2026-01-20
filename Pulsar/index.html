@@ -1,253 +1,429 @@
 <!DOCTYPE html>
-  <html>
-  <head>
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <link rel="icon" href="https://cdn.glitch.com/4b280b2d-a546-43eb-95ad-5d0cedbb8304%2Ficono.png?v=1621562191466" type="image/png">    
-  </head>    
-  <body>
-    
-    <a-scene>      
-          <a-assets >
-            <!--<video id="video1" autoplay loop="false" src="https://rawcdn.githack.com/GPB-Cosmo/visualizaciones/7260d37db77b9c1f3ca0ce6bef0f07f963c858fe/Pulsar/primero.mp4"></video>-->
-            <a-asset-item id="estrellaCampo" src="estrella-campo-polos norte y sur.glb"></a-asset-item>
-            <a-asset-item id="letreros" src="letreros.glb"></a-asset-item>
-            <a-asset-item id="be" src="B.glb"></a-asset-item>
-            <a-asset-item id="flecha" src="flecha de rotacion.glb"></a-asset-item>
-            <a-asset-item id="resortes" src="resortes.mp4"></a-asset-item>    
-            <a-asset-item id="estrellaCampoJets" src="estrella-campo-jets.glb"></a-asset-item>                      
-            <audio id="uno" src="completo1.7.mp3" preload="auto"></a-asset-item>
-            <!--<audio id="narracion" src="Texto pulsar (audio 2 ElevenLabs).mp3" preload="auto"></a-asset-item>-->
-          </a-assets>      
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrellas de neutrones y campos magnéticos en el universo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a0e17;
+            color: #e0e0e0;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 20% 30%, rgba(33, 64, 154, 0.15) 0%, transparent 20%),
+                              radial-gradient(circle at 80% 70%, rgba(103, 58, 183, 0.1) 0%, transparent 20%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(25, 25, 60, 0.9) 0%, rgba(10, 14, 23, 0.9) 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(64, 128, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #4fc3f7;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #bbbbbb;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro {
+            background-color: rgba(20, 25, 45, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #7b1fa2;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .intro p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            color: #ffcc80;
+            font-weight: 600;
+        }
+
+        .section-title {
+            color: #81c784;
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(129, 199, 132, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 1.5rem;
+        }
+
+        .requirements {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .req-item {
+            background-color: rgba(30, 35, 60, 0.8);
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(100, 150, 255, 0.1);
+        }
+
+        .req-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            border-color: rgba(100, 150, 255, 0.3);
+        }
+
+        .req-item i {
+            font-size: 2.5rem;
+            color: #64b5f6;
+            margin-bottom: 15px;
+        }
+
+        .req-item h3 {
+            color: #64b5f6;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .instructions {
+            background-color: rgba(25, 30, 50, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .step {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: #7b1fa2;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 0 10px rgba(123, 31, 162, 0.7);
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            color: #ffcc80;
+            margin-bottom: 8px;
+        }
+
+        .step-content a {
+            color: #4fc3f7;
+            text-decoration: none;
+            transition: color 0.2s;
+            word-break: break-all;
+        }
+
+        .step-content a:hover {
+            color: #ffcc80;
+            text-decoration: underline;
+        }
+
+        .tips {
+            background-color: rgba(30, 35, 60, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #ffb74d;
+        }
+
+        .tips h3 {
+            color: #ffb74d;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tips ul {
+            padding-left: 20px;
+        }
+
+        .tips li {
+            margin-bottom: 15px;
+        }
+
+        .marker {
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(20, 25, 45, 0.8);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .marker h3 {
+            color: #81c784;
+            margin-bottom: 20px;
+        }
+
+        .marker img {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(100, 150, 255, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #7b1fa2, #64b5f6);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(123, 31, 162, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(123, 31, 162, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(100, 150, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .requirements {
+                grid-template-columns: 1fr;
+            }
+            
+            .step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Estrellas de neutrones y campos magnéticos en el universo</h1>
+            <p class="subtitle">Visualización en realidad aumentada para explorar estos fascinantes objetos astrofísicos</p>
+        </header>
+
+        <section class="intro">
+            <p>Las estrellas de neutrones son sistemas astrofísicos muy interesantes donde se mezclan varias disciplinas de la física, como son la gravitación, el electromagnetismo y la mecánica cuántica.</p>
+            <p>Te presentamos aquí una secuencia de visualizaciones en <span class="highlight">realidad aumentada (RA)</span> acerca de estos objetos y su intenso campo magnético. La acompañamos con una descripción sonora de las imágenes y una explicación de los fenómenos físicos mostrados.</p>
+            <p>Con esta breve presentación pretendemos abrir una puerta a tu curiosidad y entendimiento acerca de este fascinante mundo.</p>
+        </section>
+
+        <h2 class="section-title"><i class="fas fa-tools"></i> Requisitos para acceder a la visualización</h2>
         
-          <a-marker          
-        type="pattern" preset="custom" 
-        url="https://rawcdn.githack.com/GPB-Cosmo/visualizaciones/1e9b1d810ed11a65736f5554b72549858bf84d88/Pulsar/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt"        
-        ><!--<a-video position="0 0 0" rotation="90 0 0" src="#video1" width="3.2" height="1.8" animation="property: visible ; to: false;loop:1; delay:62000;" animation__2="property: visible ; to: true;loop:1; delay:216000;"></a-video>-->
-          
+        <div class="requirements">
+            <div class="req-item">
+                <i class="fas fa-qrcode"></i>
+                <h3>Marcador</h3>
+                <p>Puedes imprimirlo o mostrarlo en una pantalla diferente a la que usarás para la RA. Descárgalo haciendo clic en la imagen del marcador más abajo.</p>
+            </div>
+            
+            <div class="req-item">
+                <i class="fas fa-laptop"></i>
+                <h3>Dispositivo compatible</h3>
+                <p>Un dispositivo móvil, tablet o computadora con navegador de internet moderno (Chrome, Firefox, Safari, etc.).</p>
+            </div>
+            
+            <div class="req-item">
+                <i class="fas fa-wifi"></i>
+                <h3>Conexión a internet</h3>
+                <p>Necesaria para cargar la visualización y el contenido multimedia.</p>
+            </div>
+            
+            <div class="req-item">
+                <i class="fas fa-camera"></i>
+                <h3>Cámara integrada</h3>
+                <p>La cámara de tu dispositivo móvil, laptop o una webcam externa para captar el marcador.</p>
+            </div>
+            
+            <div class="req-item">
+                <i class="fas fa-volume-up"></i>
+                <h3>Sistema de audio</h3>
+                <p>Bocinas o auriculares para escuchar la descripción sonora y los efectos de la visualización.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title"><i class="fas fa-list-ol"></i> Instrucciones paso a paso</h2>
         
-        <a-sphere position="0 0 0" radius="0.4" color="red" sound="src:#uno;autoplay:true;volume:3;" 
-        animation="property:scale;to:.1 .1 .1;loop:1;dur:3000;delay:16000;"
-        animation__2="property:visible;to:false;loop:1;delay:65000;"          
-        ></a-sphere>
+        <section class="instructions">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Activa el audio</h3>
+                    <p>Verifica que tu dispositivo tenga el audio activado y ajusta el volumen a un nivel adecuado.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Accede a la visualización</h3>
+                    <p>Haz clic en el siguiente enlace para abrir la visualización en RA: <br>
+                    <a href="https://gpb-cosmo.github.io/visualizaciones/Pulsar/index.html" target="_blank">https://gpb-cosmo.github.io/visualizaciones/Pulsar/index.html</a></p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Permite el acceso a la cámara</h3>
+                    <p>Si la cámara no se activa automáticamente, selecciona la opción "Permitir usar la cámara" cuando el navegador lo solicite.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Coloca el marcador</h3>
+                    <p>Cuando la cámara esté funcionando, coloca el marcador frente a ella para que sea reconocido.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>¡Disfruta la visualización!</h3>
+                    <p>Una vez reconocido el marcador, podrás observar y escuchar la visualización en realidad aumentada.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h3>Ajusta el volumen</h3>
+                    <p>Modula el volumen de tu dispositivo para escuchar claramente la descripción y los efectos de sonido.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <h3>Experimenta con el marcador</h3>
+                    <p>Puedes mover el marcador, acercarlo, alejarlo o girarlo para observar distintos ángulos y detalles de la visualización.</p>
+                </div>
+            </div>
+        </section>
 
-      <a-sphere position="0 0 0" radius="0.02" 
-          material="src: url(casa_w33.jpg); transparent: true; opacity: 1; side: double;"
-          animation="property:scale;to:500 500 500;loop:1;dur:40000;delay:19000;"          
-          animation__2="property:material.opacity;from:1;to:0.1;dur:39500;easing:linear;fill:forwards;loop:1;delay:21000;"
-          animation__3="property:visible;to:false;loop:1; dur:4000;delay:40000;">
-        </a-sphere>
+        <section class="marker">
+            <h3><i class="fas fa-download"></i> Descarga el marcador</h3>
+            <p>Haz clic en la imagen para descargar el marcador necesario para la visualización en realidad aumentada.</p>
+            <a href="#" onclick="return false;" title="Marcador de realidad aumentada">
+                <img src="https://via.placeholder.com/300x300/2a2a5a/ffffff?text=MARCADOR+RA" alt="Marcador de realidad aumentada">
+            </a>
+            <br>
+            <a href="#" class="btn" onclick="return false;"><i class="fas fa-download"></i> Descargar marcador</a>
+        </section>
 
-        <a-sphere position="0 0 0" radius="0.02" color="white"          
-          animation="property:scale;to:1000 1000 1000;loop:1;dur:6000;delay:18500;"                    
-          animation__3="property:visible;to:false;loop:1; dur:4000;delay:40000;">
-        </a-sphere>
-
+        <h2 class="section-title"><i class="fas fa-lightbulb"></i> Sugerencias para una mejor experiencia</h2>
         
-        <!--Esfera inhabilitada
+        <section class="tips">
+            <h3><i class="fas fa-star"></i> Consejos prácticos</h3>
+            <ul>
+                <li>Puedes imprimir el marcador del tamaño que prefieras. Solo asegúrate de que se mantenga completamente visible durante la visualización.</li>
+                <li>Para ajustar el tamaño aparente del marcador en la visualización, cambia la distancia entre el marcador y la cámara.</li>
+                <li>Puedes desplegar las visualizaciones en el dispositivo que prefieras. Para mayor libertad de movimiento, te recomendamos usar un dispositivo móvil.</li>
+                <li>Asegúrate de tener buena iluminación en la habitación para que la cámara pueda reconocer fácilmente el marcador.</li>
+                <li>Si experimentas problemas, intenta actualizar la página o reiniciar la aplicación de realidad aumentada.</li>
+            </ul>
+        </section>
 
-        <a-sphere position="0 0 0" radius=".02" color="white" opacity="1" 
-        animation="property:scale;to:200 200 200;loop:1;dur:3000;delay:19000;"
-        animation__2="property:opacity;from 1; to:0.5;loop:1;dur:12000;delay:21000;"
-        animation__3="property:visible;to:false;loop:1; dur:4000;delay:24000;">
-        
-        añadir alguno de los siguientes filamentos de remanente:
-        https://www.shadertoy.com/view/XdVXWc 
-        https://www.shadertoy.com/view/MlyXWy
-        https://www.shadertoy.com/view/lsyXDK
-        https://www.shadertoy.com/view/XdKSDV
-        https://www.shadertoy.com/view/XtVBWy
-        poner al rededor al final de las animaciones anteiores el remanente de supernova
-      </a-sphere>-->
+        <footer>
+            <p>Visualización en realidad aumentada: "Estrellas de neutrones y campos magnéticos en el universo"</p>
+            <p>© 2023 - Diseñado para fines educativos y de divulgación científica</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">
+                <i class="fas fa-globe"></i> Contenido adaptado de instrucciones originales en PDF
+            </p>
+        </footer>
+    </div>
 
-        <!--Imagen inhabilitada
-      <a-entity visible="false" position="0 -0.25 0" rotation="-90 0 0"
-        animation="property:visible;to:true;loop:1;delay:23000;"
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:40000;"
-        animation__3="property:scale;to:200 200;loop:1;dur:28500;delay:12000;">
-        <a-image src="casa_w33.jpg"  width=".0525" height=".0357"
-        ></a-image>        
-      </a-entity>-->      
-
-       
-      <a-entity visible="false" position="0 0 1" rotation="-90 0 0"
-        animation="property:visible;to:true;loop:1;delay:4370;"
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:11500;">
-        <a-image src="masas solares.jpg"  width="2.652" height=".693"
-        ></a-image>        
-      </a-entity>      
-
-      <a-entity visible="false" position="0 0 0.5" rotation="-90 0 0" 
-        animation="property:visible;to:true;loop:1;delay:41000;"
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:55500;">
-        <a-image src="formacion-neutrones.jpg"  width="2.246" height=".388"
-        ></a-image>        
-      </a-entity>
-
-      <a-entity rotation="90 -90 90">        
-                <a-entity visible="false"                
-                scale="0.25 0.25 0.25"                  
-                gltf-model="#estrellaCampo"                
-                animation="property: visible;to:true;loop:1;;delay:55000;"
-                animation__2="property:rotation;dur:15000 ; to: 0 -360 0; easing: linear; loop:true; delay:0;" 
-                animation__3="property:visible;to:false;loop:1; delay:110000;"                
-                ></a-entity>
-      </a-entity>                   
-
-      <a-entity rotation="90 -90 90">        
-                <a-entity visible="false"                
-                scale="0.25 0.25 0.25"                  
-                gltf-model="#flecha"                
-                animation="property: visible;to:true;loop:1;;delay:88800;"
-                animation__2="property:rotation;dur:15000 ; to: 0 -360 0; easing: linear; loop:true; delay:0;" 
-                animation__3="property:visible;to:false;loop:1; delay:110000;"                
-                ></a-entity>
-      </a-entity>                   
-      
-      <a-entity rotation="90 -90 90">
-                <a-entity visible="false" rotation="0 180 0" 
-                scale="0.25 0.25 0.25"                  
-                gltf-model="#letreros"      
-                animation="property:visible;to:true;loop:1;delay:55000;"
-                animation__3="property:visible;to:false;loop:1;delay:105000;"                                          5                ></a-entity>
-      </a-entity>
-      
-      <a-entity rotation="-90 -90 90">
-                <a-entity visible="false" rotation="0 180 0" 
-                scale="0.25 0.25 0.25"                  
-                gltf-model="#be"      
-                animation="property:visible;to:true;loop:1;delay:55000;"                
-                animation__3="property:visible;to:false;loop:1;delay:105000;"                                          
-                ></a-entity>
-      </a-entity>
-      
-      <a-entity rotation="90 -90 90">
-                <a-entity                 
-                visible="false"
-                scale="0.25 0.25 0.25"                
-                gltf-model="#estrellaCampoJets"                                
-                animation="property: visible;to:true;loop:1;delay:105000;"
-                animation__2="property:rotation; dur:15000; to: 0 -360 0; easing: linear; loop:true;"                 
-                animation__3="property:visible;to:false;loop:1;delay:131000;"
-                ></a-entity>
-      </a-entity>                                    
-      <a-video visible="false" position="0 0 0" rotation="-90 0 0" src="#resortes" width="3.2" height="1.8"                                      
-                animation="property:visible;to:true;loop:1;delay:131000;"
-                animation__2="property:visible;to:false;loop:1;delay:146000;"
-                ></a-video>
-        </a-entity>
-
-        <a-entity rotation="0 0 25">
-                <a-entity                 
-                visible="false"
-                scale="0.25 0.25 0.25"                
-                gltf-model="#estrellaCampoJets"                                
-                animation="property: visible;to:true;loop:1;delay:146000;"
-                animation__2="property:rotation; dur:15000; to: 0 -360 0; easing: linear; loop:true;"                 
-                animation__3="property:visible;to:false;loop:1;delay:147000;"
-                ></a-entity>
-
-    
-    <a-entity  rotation="0 0 -27">  
-        <a-entity visible="false" 
-                scale="0.25 0.25 0.25"                  
-                gltf-model="#estrellaCampoJets"                
-                animation="property:visible;to:true;loop:1;delay:147000;"                
-                animation__3="property:rotation;dur:700; to: 0 -360 0; easing: linear; loop:true;"                 
-                animation__4="property:visible;to:false;loop:1; delay:284200;"                                
-                ></a-entity>                 
-          </a-entity>
-          
-          <!--Rotación muy rápida-->
-          <a-entity  rotation="0 0 -27">  
-        <a-entity visible="false" 
-                scale="0.25 0.25 0.25"                  
-                gltf-model="#estrellaCampoJets"                
-                animation="property:visible;to:true;loop:1;delay:284200;"                
-                animation__3="property:rotation;dur:33; to: 0 -360 0; easing: linear; loop:true;"                 
-                animation__4="property:visible;to:false;loop:1; delay:294000;"                                
-                ></a-entity>                 
-          </a-entity>
-
-          <a-entity visible="false" position="0 0 0" rotation="-90 0 0"
-        animation="property:visible;to:true;loop:1;delay:294000;"
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:305000;"
-        animation__3="property:scale;to:5 5 5;loop:true;dur:11000;delay:294000;">
-        <a-image src="crab2.jpg"  width="1.728" height="1.122"  
-        ></a-image>                
-      </a-entity>
-
-      <a-entity visible="false" position="0 0 0" rotation="-90 0 0" 
-        animation="property:visible;to:true;loop:1;delay:305000;"        
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:315500;"
-        animation__3="property:scale;to:5 5 5;loop:true;dur:11000;delay:305000;">
-        <a-image src="vela2.jpg"  width="1.728" height="1.388"
-        ></a-image>        
-      </a-entity>
-
-      <a-entity visible="false" position="0 0 0" rotation="-90 0 0" 
-        animation="property:visible;to:true;loop:1;delay:315500;"        
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:325500;"
-        animation__3="property:scale;to:5 5 5;loop:true;dur:11000;delay:315500;">
-        <a-image src="rcw1032.jpg"  width="1.728" height="1.728"
-        ></a-image>        
-      </a-entity>
-
-      <a-entity visible="false" position="0 0 0" rotation="-90 0 0" 
-        animation="property:visible;to:true;loop:1;delay:325500;"        
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:330500;">
-        <a-image src="letrero final 2.png"  width="3.052" height=".551"
-        ></a-image>        
-      </a-entity>
-
-      <a-entity visible="false" position="0 0 0" rotation="-90 0 0" 
-        animation="property:visible;to:true;loop:1;delay:330500;"        
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:335000;">
-        <a-image src="1.jpg"  width="2.430" height="1.350"
-        ></a-image>        
-      </a-entity>
-
-      <a-entity visible="false" position="0 0 0" rotation="-90 0 0" 
-        animation="property:visible;to:true;loop:1;delay:335000;"        
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:340000;">
-        <a-image src="2.jpg"  width="2.430" height="1.350"
-        ></a-image>        
-      </a-entity>
-
-      <a-entity visible="false" position="0 0 0" rotation="-90 0 0" 
-        animation="property:visible;to:true;loop:1;delay:340000;"        
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:345000;">
-        <a-image src="3.jpg"  width="2.430" height="1.350"
-        ></a-image>        
-      </a-entity>
-
-      <a-entity visible="false" position="0 0 0" rotation="-90 0 0" 
-        animation="property:visible;to:true;loop:1;delay:345000;"        
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:350000;">
-        <a-image src="4.jpg"  width="2.430" height="1.350"
-        ></a-image>        
-      </a-entity>
-
-      <a-entity visible="false" position="0 0 0" rotation="-90 0 0" 
-        animation="property:visible;to:true;loop:1;delay:350000;"        
-        animation__2="property:visible;to:false;loop:1; dur:4000;delay:355000;">
-        <a-image src="5.jpg"  width="2.430" height="1.350"
-        ></a-image>        
-      </a-entity>      
-
-        <!--
-        <a-entity rotation="0 90 90">                 
-                ROTACIÓN LENTA
-                animation__2="property:rotation; dur:15000; to: 0 -360 0; easing: linear; loop:10; delay:0;" 
-                <a-entity scale="0.5 0.5 0.5" position="0 0 0" visible="false" animation__4="property: visible;to:true;loop:1;delay:191000;"                
-                animation="property: rotation; dur: 80; to: 0 -360 0; easing: linear; loop: true; delay: 183000;"
-                animation__2="property: visible ; to: true;loop:1; delay:62000;"
-                animation__3="property: visible ; to: false;loop:1; delay:216000;"
-                gltf-model="url(https://cdn.glitch.me/f83eeeb4-dea3-4081-87aa-1224dd105c5c/estrella%20campo%20jets%20rellenos.glb?v=1743577809374)"                
-                ></a-entity>
-        </a-entity> -->
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+    <script>
+        // Pequeño script para mejorar la interactividad
+        document.addEventListener('DOMContentLoaded', function() {
+            // Añadir efecto a los botones al hacer clic
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // En un caso real, aquí iría la lógica para descargar el marcador
+                    alert('En una implementación real, aquí se descargaría el archivo del marcador.');
+                });
+            });
+            
+            // Destacar el paso actual si el usuario está en móvil
+            if (window.innerWidth <= 768) {
+                const steps = document.querySelectorAll('.step');
+                steps.forEach(step => {
+                    step.addEventListener('click', function() {
+                        steps.forEach(s => s.classList.remove('active'));
+                        this.classList.add('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
 </html>
