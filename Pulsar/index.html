@@ -371,8 +371,8 @@
         <section class="marker">
             <h3><i class="fas fa-download"></i> Descarga el marcador</h3>
             <p>Haz clic en la imagen para descargar el marcador necesario para la visualización en realidad aumentada.</p>
-            <a href="#" onclick="return false;" title="Marcador de realidad aumentada">
-                <img src="marcador.png" alt="Marcador de realidad aumentada" src="https://drive.google.com/file/d/1gOBpPyrdpQYCCzaXdt1xfkYMfFNt-ISg/view" target="_blank">
+            <a href="https://drive.google.com/file/d/1gOBpPyrdpQYCCzaXdt1xfkYMfFNt-ISg/view" target="_blank" title="Marcador de realidad aumentada">
+                <img src="marcador.png" alt="Marcador de realidad aumentada" >
             </a>
             <br>
             
@@ -403,15 +403,7 @@
     <script>
         // Pequeño script para mejorar la interactividad
         document.addEventListener('DOMContentLoaded', function() {
-            // Añadir efecto a los botones al hacer clic
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    // En un caso real, aquí iría la lógica para descargar el marcador
-                    alert('En una implementación real, aquí se descargaría el archivo del marcador.');
-                });
-            });
+            
             
             // Destacar el paso actual si el usuario está en móvil
             if (window.innerWidth <= 768) {
