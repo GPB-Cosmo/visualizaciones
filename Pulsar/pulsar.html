@@ -4,10 +4,26 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <link rel="icon" href="icono.png">    
+     
+     <style type="text/css">
+
+      html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;  
+}
+
+a-scene {
+  width: 100vw;
+  height: 100vh;
+}
+     </style>
   </head>    
-  <body>
+  <body>    
     
-    <a-scene   embedded
+    <a-scene embedded
   arjs="sourceType: webcam; debugUIEnabled: false;"
   renderer="antialias: true; logarithmicDepthBuffer: true;"
   vr-mode-ui="enabled: false">      
@@ -24,17 +40,16 @@
           <a-marker          
         type="pattern" preset="custom" 
         url="https://rawcdn.githack.com/GPB-Cosmo/visualizaciones/1e9b1d810ed11a65736f5554b72549858bf84d88/Pulsar/e83f3976-6da0-4693-8b2f-3a00503baa97-ddf65f57-7534-4fe5-9259-9663271e181a_pattern-logo.patt"        
-        >
-          
+        >        
         
         <a-sphere position="0 0 0" radius="0.4" color="red" sound="src:#uno;autoplay:true;volume:3;" 
-        animation="property:scale;to:.1 .1 .1;loop:1;dur:3000;delay:16000;"
+        animation="property:radius;to:.1 ;loop:1;dur:3000;delay:16000;"
         animation__2="property:visible;to:false;loop:1;delay:65000;"          
         ></a-sphere>
 
       <a-sphere position="0 0 0" radius="0.02" 
           material="src: url(casa_w33.jpg); transparent: true; opacity: 1; side: double;"
-          animation="property:scale;to:500 500 500;loop:1;dur:40000;delay:19000;"          
+          animation="property:raidus;to:500;loop:1;dur:40000;delay:19000;"          
           animation__2="property:material.opacity;from:1;to:0.1;dur:39500;easing:linear;fill:forwards;loop:1;delay:21000;"
           animation__3="property:visible;to:false;loop:1; dur:4000;delay:40000;">
         </a-sphere>
@@ -208,7 +223,7 @@
         <a-image src="5.jpg"  width="2.430" height="1.350"
         ></a-image>        
       </a-entity>      
-      </a-marker>      
+      </a-marker>          
     </a-scene>
   </body>
 </html>
