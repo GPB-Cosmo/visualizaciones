@@ -29,7 +29,7 @@ a-scene {
   vr-mode-ui="enabled: false">      
           <a-assets >            
             <audio id="uno" src="completo1.7.mp3" preload="auto"></a-asset-item>
-            <a-asset-item id="estrellaCampo" src="estrella-campo-polos norte y sur.glb" preload="none"></a-asset-item>
+            
             <a-asset-item id="letreros" src="letreros.glb"></a-asset-item>
             <a-asset-item id="be" src="B.glb"></a-asset-item>
             <a-asset-item id="flecha" src="flecha de rotacion.glb"></a-asset-item>
@@ -77,10 +77,22 @@ a-scene {
                 <a-entity visible="false"                
                 scale="0.25 0.25 0.25"                  
                 gltf-model="#estrellaCampo"                
-                animation="property: visible;to:true;loop:1;;delay:55000;"
                 animation__2="property:rotation;dur:15000 ; to: 0 -360 0; easing: linear; loop:true; delay:0;" 
                 animation__3="property:visible;to:false;loop:1; delay:110000;"                
                 ></a-entity>
+                <script>
+                        
+                        setTimeout(() => { 
+
+                        const e = document.querySelector('#estrellaCampo'); 
+
+                        e.setAttribute('gltf-model', 'estrella-campo-polos norte y sur.glb'); 
+
+                        e.setAttribute('visible', 'true'); 
+
+                      }, 55000);
+                </script>
+                
       </a-entity>                   
 
       <a-entity rotation="90 -90 90">        
